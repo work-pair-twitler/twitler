@@ -8,14 +8,13 @@
 
 <body class="background">
 
-  <button class="button" style="vertical-align:middle"><span> Tweets </span></button>
+  <center><button class="button" style="vertical-align:middle" > <span> New Tweets </span></button></center>
   <style>
     button {
   display: inline-block;
-  border-radius: 4px;
-  background-color: #f4511e;
+  background-color: #bdc8dd;
   border: none;
-  color: #FFFFFF;
+  color: #4487ec;
   text-align: center;
   font-size: 28px;
   padding: 20px;
@@ -25,15 +24,20 @@
   margin: 5px;
 }
   </style>
+  <br><br>
   <div id='tweets'></div>
+  <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+  <input id='addTweet' type='text' size='100%'>
+
+
   <script>
   
     function display() {
       var $body = $('#tweets');
-
       $body.html('');
       var index = streams.home.length - 1;
-      while (index >= 0) {
+      var i =  streams.home.length -1;
+      while (index >= i-10) {
         var tweet = streams.home[index];
         var $tweet = $('<div></div>');
         $tweet.text('@' + tweet.user + ': ' + tweet.message + ' ' + ' pusblished ' +  tweet.created_at.getMinutes()  +  " mintes ago ");
@@ -43,15 +47,20 @@
 
     }
 
+
     $(document).ready(function () {
       display();
       $('.button').click(display)
-    
-
     });
-    $('.background').css("background-image","url('https://i.pinimg.com/originals/b1/1c/55/b11c5526f8b91661b1c505f780511e0d.jpg')");
+
+    $('.background').css("background-image","url('https://th.bing.com/th/id/Rbb21a1abbc3ea56c490099209a6289de?rik=W3KhPnMqJm6nXQ&riu=http%3a%2f%2fwww.my-hd-wallpapers.com%2fwall%2f1406462716_twitter-logo_800.jpg&ehk=6HEZdVBKWoCgrq1R%2fqPYd6EKWJTZ6emFu6Lc%2bKgoQTo%3d&risl=&pid=ImgRaw')");
+    $('.background').css('background-position', 'center');
+    $('.background').css('background-size', 'cover');
+    $('.background').css('background-repeat', 'no-repeat');
+    $('.background').css('background-attachment', 'fixed');
     $('div').css('color','white')
     
+
   </script>
 </body>
 
